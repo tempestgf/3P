@@ -2,7 +2,7 @@ package com.tempestgf.threep.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FlightTakeoff
+import androidx.compose.material.icons.filled.AirplanemodeActive
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -28,7 +28,7 @@ fun SplashScreen(onNavigateToHome: () -> Unit) {
             verticalArrangement = Arrangement.Center
         ) {
             Icon(
-                imageVector = Icons.Default.FlightTakeoff,
+                imageVector = Icons.Default.AirplanemodeActive,
                 contentDescription = "App Logo",
                 modifier = Modifier.size(120.dp),
                 tint = MaterialTheme.colorScheme.onPrimaryContainer
