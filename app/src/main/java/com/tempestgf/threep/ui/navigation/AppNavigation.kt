@@ -10,6 +10,8 @@ import com.tempestgf.threep.ui.screens.HomeScreen
 import com.tempestgf.threep.ui.screens.ItineraryScreen
 import com.tempestgf.threep.ui.screens.PreferencesScreen
 import com.tempestgf.threep.ui.screens.TripScreen
+import com.tempestgf.threep.ui.screens.AboutScreen
+import com.tempestgf.threep.ui.screens.TermsScreen
 
 sealed class Screen(val route: String) {
     object Home : Screen("home")
@@ -18,6 +20,8 @@ sealed class Screen(val route: String) {
         fun createRoute(tripId: String) = "itinerary/$tripId"
     }
     object Preferences : Screen("preferences")
+    object About : Screen("about")
+    object Terms : Screen("terms")
 }
 
 @Composable
@@ -28,7 +32,9 @@ fun AppNavigation() {
         composable(Screen.Home.route) {
             HomeScreen(
                 onNavigateToTrip = { navController.navigate(Screen.Trip.route) },
-                onNavigateToPreferences = { navController.navigate(Screen.Preferences.route) }
+                onNavigateToPreferences = { navController.navigate(Screen.Preferences.route) },
+                onNavigateToAbout = { navController.navigate(Screen.About.route) },
+                onNavigateToTerms = { navController.navigate(Screen.Terms.route) }
             )
         }
         
@@ -54,6 +60,18 @@ fun AppNavigation() {
         
         composable(Screen.Preferences.route) {
             PreferencesScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        
+        composable(Screen.About.route) {
+            AboutScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        
+        composable(Screen.Terms.route) {
+            TermsScreen(
                 onNavigateBack = { navController.popBackStack() }
             )
         }

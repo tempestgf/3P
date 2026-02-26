@@ -13,7 +13,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun HomeScreen(
     onNavigateToTrip: () -> Unit,
-    onNavigateToPreferences: () -> Unit
+    onNavigateToPreferences: () -> Unit,
+    onNavigateToAbout: () -> Unit,
+    onNavigateToTerms: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -43,6 +45,24 @@ fun HomeScreen(
                 modifier = Modifier.fillMaxWidth().height(56.dp)
             ) {
                 Text("View My Trips")
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            OutlinedButton(
+                onClick = onNavigateToAbout,
+                modifier = Modifier.fillMaxWidth().height(56.dp)
+            ) {
+                Text("About App")
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            TextButton(
+                onClick = onNavigateToTerms,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Terms & Conditions")
             }
         }
     }
