@@ -3,32 +3,46 @@ classDiagram
         +String id
         +String name
         +String email
-        +Preferences preferences
+        +UserPreferences preferences
+        +authenticate()
+    }
+    
+    class UserPreferences {
+        +Boolean darkMode
+        +Boolean notificationsEnabled
+        +String currency
     }
     
     class Trip {
         +String id
         +String title
+        +String destination
         +Date startDate
         +Date endDate
-        +String destination
+        +Boolean isArchived
+        +getDurationInDays() Int
     }
     
-    class Itinerary {
+    class ItineraryDay {
         +String id
         +String tripId
         +Date date
         +List~Activity~ activities
+        +sortActivities()
     }
     
     class Activity {
         +String id
         +String title
         +String description
-        +Time time
+        +String startTime
+        +String endTime
         +String location
+        +Double cost
+        +isValidTimeRange() Boolean
     }
 
-    User "1" -- "*" Trip : plans
-    Trip "1" -- "*" Itinerary : contains
-    Itinerary "1" -- "*" Activity : includes
+    User "1" -- "1" UserPreferences : has
+    User "1" -- "*" Trip : creates
+    Trip "1" -- "*" ItineraryDay : contains
+    ItineraryDay "1" -- "*" Activity : includes
