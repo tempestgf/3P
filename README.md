@@ -1,6 +1,16 @@
+<p align="center">
+  <img src="app/src/main/res/logo.png" width="200" alt="3P Logo">
+</p>
+
 # 3P – Travel Planner App ✈️
 
 **3P (ThreeP / Trip)** is a simple Android application that acts as a **travel planner scaffolding tool**, helping users structure and organize their trips efficiently.
+
+## 👥 Team Information
+- **Course**: 105025-2526 (Applications for mobile devices)
+- **Institution**: University of Lleida (Campus Igualada)
+- **Professor**: Vítor da Silva Verbel
+- **Team**: [Your Name/Team Name]
 
 ---
 

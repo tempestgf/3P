@@ -1,0 +1,34 @@
+classDiagram
+    class User {
+        +String id
+        +String name
+        +String email
+        +Preferences preferences
+    }
+    
+    class Trip {
+        +String id
+        +String title
+        +Date startDate
+        +Date endDate
+        +String destination
+    }
+    
+    class Itinerary {
+        +String id
+        +String tripId
+        +Date date
+        +List~Activity~ activities
+    }
+    
+    class Activity {
+        +String id
+        +String title
+        +String description
+        +Time time
+        +String location
+    }
+
+    User "1" -- "*" Trip : plans
+    Trip "1" -- "*" Itinerary : contains
+    Itinerary "1" -- "*" Activity : includes
