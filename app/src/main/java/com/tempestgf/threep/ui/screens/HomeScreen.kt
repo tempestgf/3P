@@ -1,18 +1,23 @@
 package com.tempestgf.threep.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Policy
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tempestgf.threep.data.MockData
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    onNavigateToTrip: () -> Unit,
+    onNavigateToTripDetail: (String) -> Unit,
     onNavigateToPreferences: () -> Unit,
     onNavigateToAbout: () -> Unit,
     onNavigateToTerms: () -> Unit
@@ -20,8 +25,14 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("3P Travel Planner") },
+                title = { Text("Dashboard") },
                 actions = {
+                    IconButton(onClick = onNavigateToAbout) {
+                        Icon(Icons.Default.Info, contentDescription = "About")
+                    }
+                    IconButton(onClick = onNavigateToTerms) {
+                        Icon(Icons.Default.Policy, contentDescription = "Terms")
+                    }
                     IconButton(onClick = onNavigateToPreferences) {
                         Icon(Icons.Default.Settings, contentDescription = "Preferences")
                     }
@@ -29,40 +40,33 @@ fun HomeScreen(
             )
         }
     ) { padding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .padding(16.dp)
         ) {
-            Text(text = "Welcome to 3P!", style = MaterialTheme.typography.headlineMedium)
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            Button(
-                onClick = onNavigateToTrip,
-                modifier = Modifier.fillMaxWidth().height(56.dp)
-            ) {
-                Text("View My Trips")
+            item {
+                Text(
+                    text = "My Upcoming Trips",
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
             }
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            OutlinedButton(
-                onClick = onNavigateToAbout,
-                modifier = Modifier.fillMaxWidth().height(56.dp)
-            ) {
-                Text("About App")
-            }
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            TextButton(
-                onClick = onNavigateToTerms,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text("Terms & Conditions")
+            items(MockData.trips) { trip ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp)
+                        .clickable { onNavigateToTripDetail(trip.id) },
+                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                ) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Text(text = trip.title, style = MaterialTheme.typography.titleLarge)
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(text = trip.destination, style = MaterialTheme.typography.bodyMedium)
+                    }
+                }
             }
         }
     }
