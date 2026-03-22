@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">3P Planificador de Viajes</string>
+    <string name="title_settings">Ajustes</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="dob">Fecha de Nacimiento</string>
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="language">Idioma</string>
+    <string name="trips">Viajes</string>
+    <string name="add_trip">Añadir Viaje</string>
+    <string name="startDate">Fecha de Inicio</string>
+    <string name="endDate">Fecha de Fin</string>
+    <string name="description">Descripción</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Borrar</string>
+    <string name="activities">Actividades</string>
+    <string name="add_activity">Añadir Actividad</string>
+    <string name="title">Título</string>
+    <string name="error_all_fields_required">Todos los campos son obligatorios</string>
+    <string name="error_invalid_date_format">Las fechas deben estar en formato dd/MM/yyyy</string>
+    <string name="error_start_date_future">La fecha de inicio debe ser en el futuro</string>
+    <string name="error_start_before_end">La fecha de inicio debe ser anterior a la de fin</string>
+    <string name="error_invalid_dates">Fechas inválidas</string>
+    <string name="error_title_desc_required">El título y la descripción son obligatorios</string>
+    <string name="error_activity_date_future">La fecha de la actividad debe ser en el futuro</string>
+    <string name="error_activity_within_trip_dates">La fecha debe estar dentro del viaje (%1 - %2)</string>
+
+    <string name="about_title">Información</string>
+    <string name="about_version">Versión: 2.0.0</string>
+    <string name="about_summary_title">Resumen</string>
+    <string name="about_summary_text">3P es tu compañero de viaje definitivo, ayudándote a planear, organizar y disfrutar de tus viajes sin problemas. Desde administrar itinerarios hasta hacer un seguimiento de tus actividades, 3P hace que viajar no sea estresante.</string>
+    <string name="about_team_title">Información del Equipo</string>
+    <string name="about_team_dev">- Tempestgf (Desarrollador Principal)</string>
+    <string name="about_team_uni">- Universitat de Lleida (Campus Igualada)</string>
+    
+    <string name="terms_title">Términos y Condiciones</string>
+    <string name="terms_header">Términos y Condiciones</string>
+    <string name="terms_intro_title">1. Introducción</string>
+    <string name="terms_intro_text">Bienvenido a 3P Travel Planner. Al usar nuestra aplicación, aceptas estos términos.</string>
+    <string name="terms_data_title">2. Datos de Usuario</string>
+    <string name="terms_data_text">Respetamos tu privacidad. Tus datos de viaje se almacenan de manera segura y no se comparten con terceros sin tu consentimiento.</string>
+    <string name="terms_usage_title">3. Uso</string>
+    <string name="terms_usage_text">Esta aplicación se proporciona para uso personal y no comercial. Aceptas no hacer un mal uso de los servicios proporcionados.</string>
+    <string name="terms_modifications_title">4. Modificaciones</string>
+    <string name="terms_modifications_text">Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la aplicación significa la aceptación de los nuevos términos.</string>
+    <string name="terms_agree">Acepto</string>
+    <string name="back_button">Atrás</string>
+
+    <string name="gallery_title">Galería del Viaje</string>
+    <string name="gallery_add_photo">Añadir Foto</string>
+    <string name="gallery_delete_photo">Borrar Foto</string>
+    <string name="gallery_mock_image">Imagen Simulada %d</string>
+
+    <string name="edit_trip">Editar Viaje</string>
+    <string name="delete_trip">Eliminar Viaje</string>
+    <string name="select_date">Seleccionar Fecha</string>
+    <string name="select_time">Seleccionar Hora</string>
+    <string name="cancel">Cancelar</string>
+    <string name="trip_not_found">Viaje no encontrado</string>
+</resources>

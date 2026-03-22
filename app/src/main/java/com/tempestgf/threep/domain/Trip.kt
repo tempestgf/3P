@@ -1,18 +1,28 @@
-package com.tempestgf.threep.domain
+﻿package com.tempestgf.threep.domain
 
-import java.util.Date
+import java.util.UUID
 
 data class Trip(
-    val id: String,
+    val id: String = UUID.randomUUID().toString(),
     val title: String,
-    val destination: String,
-    val startDate: Date,
-    val endDate: Date,
-    val isArchived: Boolean = false
+    val startDate: String,
+    val endDate: String,
+    val description: String,
+    val budget: Double = 0.0,
+    val activities: List<Activity> = emptyList()
 ) {
-    // @TODO: Implement logic to calculate total trip duration
-    fun getDurationInDays(): Int {
-        // Pending implementation
-        return 0
+    /**
+     * Calculates remaining budget after planned activities.
+     */
+    fun getRemainingBudget(): Double {
+        val totalActivityCost = activities.sumOf { it.cost }
+        return budget - totalActivityCost
+    }
+
+    /**
+     * Future feature: calculate optimization of daily spending.
+     */
+    fun optimizeBudgetDistribution() {
+        // @TODO Implement smart budget distribution algorithm
     }
 }

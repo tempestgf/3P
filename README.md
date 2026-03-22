@@ -10,7 +10,7 @@
 - **Course**: 105025-2526 (Applications for mobile devices)
 - **Institution**: University of Lleida (Campus Igualada)
 - **Professor**: Vítor da Silva Verbel
-- **Team**: [Your Name/Team Name]
+- **Team**: Tempestgf
 
 ---
 

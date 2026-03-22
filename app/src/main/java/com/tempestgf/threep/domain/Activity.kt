@@ -1,17 +1,14 @@
-package com.tempestgf.threep.domain
+﻿package com.tempestgf.threep.domain
+
+import java.time.LocalDate
+import java.time.LocalTime
+import java.util.UUID
 
 data class Activity(
-    val id: String,
+    val id: String = UUID.randomUUID().toString(),
     val title: String,
     val description: String,
-    val startTime: String,
-    val endTime: String,
-    val location: String,
-    val cost: Double
-) {
-    // @TODO: Implement logic to validate time range
-    fun isValidTimeRange(): Boolean {
-        // Pending implementation
-        return true
-    }
-}
+    val date: LocalDate,
+    val time: LocalTime,
+    val cost: Double = 0.0
+)

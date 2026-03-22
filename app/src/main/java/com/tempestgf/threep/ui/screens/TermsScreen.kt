@@ -8,7 +8,9 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tempestgf.threep.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -16,10 +18,10 @@ fun TermsScreen(onNavigateBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Terms & Conditions") },
+                title = { Text(stringResource(R.string.terms_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.back_button))
                     }
                 }
             )
@@ -32,30 +34,30 @@ fun TermsScreen(onNavigateBack: () -> Unit) {
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            Text("Terms and Conditions", style = MaterialTheme.typography.headlineSmall)
+            Text(stringResource(R.string.terms_header), style = MaterialTheme.typography.headlineSmall)
             Spacer(modifier = Modifier.height(16.dp))
-            
-            Text("1. Introduction", style = MaterialTheme.typography.titleMedium)
-            Text("Welcome to 3P Travel Planner. By using our app, you agree to these terms.", style = MaterialTheme.typography.bodyMedium)
+
+            Text(stringResource(R.string.terms_intro_title), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.terms_intro_text), style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(12.dp))
-            
-            Text("2. User Data", style = MaterialTheme.typography.titleMedium)
-            Text("We respect your privacy. Your travel data is stored securely and is not shared with third parties without your consent.", style = MaterialTheme.typography.bodyMedium)
+
+            Text(stringResource(R.string.terms_data_title), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.terms_data_text), style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(12.dp))
-            
-            Text("3. Usage", style = MaterialTheme.typography.titleMedium)
-            Text("This application is provided for personal, non-commercial use. You agree not to misuse the services provided.", style = MaterialTheme.typography.bodyMedium)
+
+            Text(stringResource(R.string.terms_usage_title), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.terms_usage_text), style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(12.dp))
-            
-            Text("4. Modifications", style = MaterialTheme.typography.titleMedium)
-            Text("We reserve the right to modify these terms at any time. Continued use of the app constitutes acceptance of the new terms.", style = MaterialTheme.typography.bodyMedium)
+
+            Text(stringResource(R.string.terms_modifications_title), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.terms_modifications_text), style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(32.dp))
-            
+
             Button(
                 onClick = onNavigateBack,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("I Agree")
+                Text(stringResource(R.string.terms_agree))
             }
         }
     }
